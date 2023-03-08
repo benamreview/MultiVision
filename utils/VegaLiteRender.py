@@ -112,8 +112,8 @@ class VegaLiteRender():
                 'type': 'quantitative'
             }
             self.available_channels.remove('y')
+        vlEncoding, self.available_channels = tryAssign(vlEncoding, temporals, self.temporal_channels, self.available_channels)
         vlEncoding, self.available_channels = tryAssign(vlEncoding, nominals, self.nominal_channels, self.available_channels)
         vlEncoding, self.available_channels = tryAssign(vlEncoding, quantitatives, self.quantitative_channels, self.available_channels)    
-        vlEncoding, self.available_channels = tryAssign(vlEncoding, temporals, self.temporal_channels, self.available_channels)
-
+        print(vlEncoding)
         return vlEncoding
